@@ -8,20 +8,21 @@ class Threaded
 {
 public:
 
-	class Lock;
+    class Lock;
     friend class Lock;
 
     struct Lock
     {
-		Lock() {}
-		explicit Lock(const Threaded& host):
-		mLock(host.mMutex){}
+        Lock() {}
+        explicit Lock(const Threaded& host):
+        mLock(host.mMutex){}
 
         std::lock_guard<std::mutex> mLock;
-	};
+    };
 
 private:
-	mutable std::mutex mMutex;
+    mutable std::mutex mMutex;
 };
 
 #endif // BOOST_THREADED_H
+

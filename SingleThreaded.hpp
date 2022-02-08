@@ -9,9 +9,10 @@ class SingleThreaded
 public:
     struct Lock
     {
-		Lock() {}
+        Lock() {}
         explicit Lock(const SingleThreaded&) {}
-	};
+    };
 };
 
 #endif // SINGLE_THREADED_H
+
